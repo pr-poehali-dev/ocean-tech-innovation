@@ -7,92 +7,170 @@ const NAV_ITEMS = [
   { id: 'hero', label: 'ГЛАВНАЯ' },
   { id: 'directions', label: 'НАПРАВЛЕНИЯ' },
   { id: 'services', label: 'УСЛУГИ' },
-  { id: 'catalog', label: 'ТЕХНОЛОГИИ' },
   { id: 'partners', label: 'ПАРТНЁРСТВО' },
   { id: 'contacts', label: 'КОНТАКТЫ' },
 ];
 
 const DIRECTIONS = [
-  { icon: 'Waves', title: 'Подводные исследования', desc: 'Разработка автономных подводных аппаратов и систем глубоководного зондирования до 6000 м.', tag: 'DEEP-SEA' },
-  { icon: 'Navigation', title: 'Навигационные системы', desc: 'Прецизионные навигационные комплексы с интеграцией ИИ для арктических и шельфовых условий.', tag: 'NAV-SYS' },
-  { icon: 'Cpu', title: 'Цифровое судостроение', desc: 'Цифровые двойники судов, предиктивная аналитика технического состояния флота.', tag: 'DIGITAL' },
-  { icon: 'Zap', title: 'Энергетика & Экология', desc: 'Гибридные силовые установки, системы утилизации тепла и экологического мониторинга.', tag: 'ECO-PWR' },
-  { icon: 'Radio', title: 'Связь & Мониторинг', desc: 'Подводные акустические сети, спутниковые каналы связи и системы дистанционного мониторинга.', tag: 'COMMS' },
-  { icon: 'Shield', title: 'Безопасность флота', desc: 'Системы обнаружения угроз, мониторинга целостности корпуса и аварийного реагирования.', tag: 'SECURE' },
+  {
+    icon: 'Waves',
+    tag: 'НАПРАВЛЕНИЕ 1',
+    title: 'Экологический мониторинг',
+    desc: 'Разработка и внедрение систем комплексного мониторинга состояния морской среды Дальнего Востока.',
+    items: [
+      'Мониторинг качества морских вод',
+      'Оценка состояния донных экосистем',
+      'Оценка влияния хозяйственной деятельности на состояние морей',
+      'Прогнозирование изменений морских условий',
+    ],
+    footer: 'Наши технологии позволяют выявлять экологические проблемы на ранних этапах и принимать обоснованные решения для защиты морской среды.',
+  },
+  {
+    icon: 'Fish',
+    tag: 'НАПРАВЛЕНИЕ 2',
+    title: 'Исследование и сохранение биоразнообразия',
+    desc: 'Фундаментальные и прикладные исследования морских экосистем, направленные на понимание и сохранение биоразнообразия.',
+    items: [
+      'Изучение видового состава морских организмов',
+      'Анализ влияния загрязнений на морскую биоту',
+      'Оценка здоровья популяций морских организмов',
+      'Развитие методов биоиндикации состояния морской среды',
+      'Разработка стратегий сохранения уникальных экосистем',
+    ],
+    footer: 'Мы помогаем понять, как морская жизнь реагирует на окружающие условия и как мы можем защитить хрупкие экосистемы от современных угроз.',
+  },
+  {
+    icon: 'Cpu',
+    tag: 'НАПРАВЛЕНИЕ 3',
+    title: 'Искусственный интеллект и анализ данных',
+    desc: 'Применение современных методов искусственного интеллекта и машинного обучения для анализа огромных объёмов океанографических данных.',
+    items: [
+      'Интеллектуальные системы анализа спутниковых данных',
+      'Модели прогнозирования изменений морской среды',
+      'Алгоритмы автоматического обнаружения аномалий',
+      'Инструменты для визуализации сложных данных',
+    ],
+    footer: 'Данные технологии позволяют выявлять закономерности в больших объёмах информации и делать точные прогнозы о состоянии морской среды.',
+  },
+  {
+    icon: 'Settings',
+    tag: 'НАПРАВЛЕНИЕ 4',
+    title: 'Разработка специализированного оборудования',
+    desc: 'Проектирование и создание инновационных приборов и устройств для морских исследований.',
+    items: [
+      'Подводные автономные и управляемые аппараты (ROV/AUV)',
+      'Высокоточные датчики и сенсоры',
+      'Системы сбора и передачи данных в реальном времени',
+      'Устройства для отбора проб и научных наблюдений',
+    ],
+    footer: 'Каждое устройство разрабатывается с учётом суровых условий глубокого и холодного морского окружения.',
+  },
+  {
+    icon: 'Anchor',
+    tag: 'НАПРАВЛЕНИЕ 5',
+    title: 'Управление и устойчивое развитие морских ресурсов',
+    desc: 'Разработка научных основ для ответственного и устойчивого использования морских ресурсов.',
+    items: [],
+    footer: '',
+  },
 ];
 
 const SERVICES = [
-  { num: '01', title: 'Научно-технические исследования', desc: 'Проведение НИР и ОКР в области морских технологий. Прикладные исследования по заказу промышленных предприятий.' },
-  { num: '02', title: 'Инжиниринг и проектирование', desc: 'Полный цикл проектирования морских технических систем от технического задания до рабочей документации.' },
-  { num: '03', title: 'Испытания и сертификация', desc: 'Стендовые, натурные и гидродинамические испытания. Сопровождение сертификации по РМРС, GL, DNV.' },
-  { num: '04', title: 'Технологический аудит', desc: 'Оценка технологической зрелости, анализ рисков и разработка дорожных карт цифровой трансформации флота.' },
-  { num: '05', title: 'Обучение и трансфер технологий', desc: 'Программы повышения квалификации инженеров, лицензирование технологий, создание совместных лабораторий.' },
-  { num: '06', title: 'Эксплуатационная поддержка', desc: 'Техническое сопровождение внедрённых систем, обновление программного обеспечения, гарантийный сервис.' },
-];
-
-const TECHNOLOGIES = [
   {
-    id: 'AUV-X7', name: 'Автономный подводный аппарат AUV-X7', category: 'ПОДВОДНЫЕ СИСТЕМЫ',
-    desc: 'Глубоководный автономный аппарат для картографирования дна и мониторинга трубопроводов.',
-    specs: [{ label: 'Глубина погружения', value: '6 000 м' }, { label: 'Автономность', value: '72 часа' }, { label: 'Скорость', value: '5 уз' }, { label: 'Полезная нагрузка', value: '40 кг' }],
-    status: 'СЕРИЙНОЕ ПРОИЗВОДСТВО',
+    num: '01',
+    title: 'Инженерные изыскания',
+    subsections: [
+      {
+        label: 'ГИДРОМЕТЕОРОЛОГИЧЕСКИЕ ИЗЫСКАНИЯ',
+        items: [
+          'Наблюдения за параметрами гидрологического режима',
+          'Исследование ледового покрова',
+          'Метеорологические исследования',
+          'Батиметрическая съёмка',
+          'Исследование литодинамических процессов',
+          'Математическое моделирование гидрометеорологических процессов',
+          'Характеристика гидрометеорологического режима акваторий',
+        ],
+      },
+      {
+        label: 'ЭКОЛОГИЧЕСКИЕ ИЗЫСКАНИЯ',
+        items: [
+          'Комплексный мониторинг морской среды',
+          'Гидрохимические исследования воды',
+          'Геохимические исследования осадков и донных отложений',
+          'Радиационные исследования',
+          'Исследование биоразнообразия и состояния экосистем',
+          'Оценка загрязнения морской среды, донных отложений и морских организмов',
+        ],
+      },
+    ],
   },
   {
-    id: 'NAVCORE-AI', name: 'Навигационный комплекс NAVCORE-AI', category: 'НАВИГАЦИЯ',
-    desc: 'Интегрированная система навигации с нейросетевой компенсацией помех и предиктивным маршрутированием.',
-    specs: [{ label: 'Точность', value: '0.5 м' }, { label: 'Отклик', value: '< 50 мс' }, { label: 'Диапазон', value: 'Арктика–45°' }, { label: 'Интерфейсы', value: 'NMEA, AIS' }],
-    status: 'ОПЫТНАЯ ЭКСПЛУАТАЦИЯ',
+    num: '02',
+    title: 'Экологический мониторинг',
+    subsections: [
+      {
+        label: '',
+        items: [
+          'Физико-химические исследования воды',
+          'Изучение донных отложений и гидрогеологии',
+          'Оценка экологического и биологического состояния экосистемы',
+          'Выявление источников загрязнения',
+          'Анализ влияния хозяйственной деятельности',
+          'Определение видового состава фито-, зоо-, ихтио- и бактерио-планктона',
+          'Исследование бентосных организмов',
+          'Изучение влияния загрязнений на организмы',
+          'Анализ генетического разнообразия',
+        ],
+      },
+    ],
   },
   {
-    id: 'TWIN-SHIP', name: 'Цифровой двойник судна TWIN-SHIP', category: 'ЦИФРОВЫЕ ТЕХ.',
-    desc: 'Платформа создания цифровых двойников для предиктивного обслуживания и оптимизации эксплуатации.',
-    specs: [{ label: 'Параметров', value: '2 400+' }, { label: 'Точность прогноза', value: '94.7%' }, { label: 'Интеграция', value: 'API/REST' }, { label: 'Экономия топлива', value: 'до 12%' }],
-    status: 'ГОТОВ К ВНЕДРЕНИЮ',
+    num: '03',
+    title: 'Разработка и испытание оборудования для морских исследований',
+    subsections: [
+      {
+        label: '',
+        items: [
+          'Консультирование в выборе оборудования',
+          'Проектирование специальных приборов',
+          'Изготовление прототипов',
+          'Полевые испытания в реальных условиях',
+          'Оптимизация и финальная доработка',
+        ],
+      },
+    ],
   },
   {
-    id: 'HYDRO-LINK', name: 'Акустическая сеть HYDRO-LINK', category: 'СВЯЗЬ',
-    desc: 'Подводная широкополосная акустическая сеть передачи данных для мониторинга морских объектов.',
-    specs: [{ label: 'Дальность', value: '15 км' }, { label: 'Скорость', value: '50 кбит/с' }, { label: 'Глубина', value: '4 000 м' }, { label: 'Узлов', value: 'до 32' }],
-    status: 'ПАТЕНТ ПОЛУЧЕН',
+    num: '04',
+    title: 'Математическое моделирование гидрометеорологической ситуации и прогнозы',
+    subsections: [
+      {
+        label: '',
+        items: [
+          'Сбор и организация данных',
+          'Статистический и пространственный анализ',
+          'Построение численных моделей',
+          'Прогнозирование будущих изменений',
+          'Визуализация результатов',
+        ],
+      },
+    ],
   },
   {
-    id: 'ECO-DRIVE', name: 'Гибридная СЭУ ECO-DRIVE', category: 'ЭНЕРГЕТИКА',
-    desc: 'Гибридная судовая энергетическая установка на основе топливных элементов и аккумуляторов.',
-    specs: [{ label: 'Мощность', value: '3 МВт' }, { label: 'Снижение CO₂', value: '45%' }, { label: 'КПД', value: '62%' }, { label: 'Класс судна', value: 'до 5 000 DWT' }],
-    status: 'РАЗРАБОТКА',
-  },
-  {
-    id: 'HULL-GUARD', name: 'Контроль корпуса HULL-GUARD', category: 'БЕЗОПАСНОСТЬ',
-    desc: 'Распределённая пьезоэлектрическая система непрерывного мониторинга целостности корпуса судна.',
-    specs: [{ label: 'Датчиков', value: 'до 512' }, { label: 'Обнаружение', value: 'от 0.3 мм' }, { label: 'Тревога', value: '< 2 сек' }, { label: 'Мощность', value: '18 Вт' }],
-    status: 'СЕРТИФИКАЦИЯ РМРС',
+    num: '05',
+    title: 'Консультации и обучение',
+    subsections: [],
   },
 ];
 
 const PARTNERS = [
-  { name: 'ОСК', full: 'Объединённая судостроительная корпорация', type: 'Стратегический партнёр' },
-  { name: 'ЦНИИ МТ', full: 'Центр технологии судостроения', type: 'Научное сотрудничество' },
-  { name: 'Росатом', full: 'Государственная атомная корпорация', type: 'Совместные проекты' },
-  { name: 'МГТУ им. Баумана', full: 'Московский технический университет', type: 'Образование & Наука' },
-  { name: 'DNV', full: 'Det Norske Veritas (Норвегия)', type: 'Сертификация' },
-  { name: 'Газпром Нефть', full: 'Газпром Нефть Шельф', type: 'Заказчик' },
+  { name: 'ЦМИ МГУ', full: 'Общество с ограниченной ответственностью «Центр морских исследований МГУ имени М.В. Ломоносова»' },
+  { name: 'АО «МАГЭ»', full: 'Акционерное общество «Морская арктическая геологоразведочная экспедиция»' },
+  { name: 'Экоаналитика', full: 'Общество с ограниченной ответственностью «Экоаналитика»' },
+  { name: 'Русский Краб', full: 'Акционерное общество «Русский Краб»' },
+  { name: 'Фертоинг', full: 'Общество с ограниченной ответственностью «Фертоинг»' },
 ];
-
-const STATS = [
-  { val: '27', unit: 'лет', label: 'опыта' },
-  { val: '340+', unit: '', label: 'проектов' },
-  { val: '18', unit: '', label: 'патентов' },
-  { val: '94', unit: '%', label: 'успешных внедрений' },
-];
-
-const STATUS_COLOR: Record<string, string> = {
-  'СЕРИЙНОЕ ПРОИЗВОДСТВО': '#00e5ff',
-  'ОПЫТНАЯ ЭКСПЛУАТАЦИЯ': '#f0b940',
-  'ГОТОВ К ВНЕДРЕНИЮ': '#7fff7f',
-  'ПАТЕНТ ПОЛУЧЕН': '#bf8fff',
-  'РАЗРАБОТКА': '#ff9f7f',
-  'СЕРТИФИКАЦИЯ РМРС': '#f0b940',
-};
 
 function useScrollSpy() {
   const [active, setActive] = useState('hero');
@@ -154,8 +232,8 @@ function NavBar() {
             <div className="absolute w-2 h-2 bg-cyan rounded-full top-4 left-4 animate-pulse-glow" />
           </div>
           <div>
-            <div className="font-display text-sm font-500 tracking-widest text-cyan leading-none">ЦМТ</div>
-            <div className="font-mono text-[8px] text-white/30 tracking-widest">MARITIME TECH CENTER</div>
+            <div className="font-display text-sm font-500 tracking-widest text-cyan leading-none">ИЦ ТОИ ДВО РАН</div>
+            <div className="font-mono text-[8px] text-white/30 tracking-widest">ИНЖИНИРИНГОВЫЙ ЦЕНТР</div>
           </div>
         </button>
 
@@ -202,21 +280,19 @@ function HeroSection() {
       </div>
       <div className="absolute inset-0 grid-bg opacity-40" />
 
-      {/* Orbs */}
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full animate-float pointer-events-none"
         style={{ background: 'radial-gradient(circle,rgba(0,229,255,.15) 0%,transparent 70%)', filter: 'blur(50px)' }} />
       <div className="absolute bottom-1/4 left-1/5 w-72 h-72 rounded-full animate-float pointer-events-none"
         style={{ background: 'radial-gradient(circle,rgba(240,185,64,.12) 0%,transparent 70%)', filter: 'blur(60px)', animationDelay: '2s' }} />
 
-      {/* Decorative ring — desktop only */}
       <div className="absolute right-16 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
         <div className="relative w-72 h-72">
           <div className="absolute inset-0 border border-cyan/15 rounded-full animate-rotate-slow" />
           <div className="absolute inset-6 border border-gold/10 rounded-full" style={{ animation: 'rotate-slow 14s linear infinite reverse' }} />
           <div className="absolute inset-12 border border-cyan/08 rounded-full animate-rotate-slow" style={{ animationDuration: '8s' }} />
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="font-mono text-[8px] text-cyan/40 tracking-widest mb-1">СИСТЕМА</div>
+            <div className="text-center px-4">
+              <div className="font-mono text-[8px] text-cyan/40 tracking-widest mb-1">СТАТУС</div>
               <div className="font-display text-xl text-cyan glow-cyan">ONLINE</div>
               <div className="w-2 h-2 bg-cyan rounded-full mx-auto mt-2 animate-pulse-glow" />
             </div>
@@ -236,25 +312,28 @@ function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
         <div className="flex items-center gap-3 mb-8 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           <div className="w-8 h-px bg-cyan" />
-          <span className="font-mono text-xs text-cyan tracking-widest animate-pulse-glow">ЦЕНТР МОРСКИХ ТЕХНОЛОГИЙ</span>
+          <span className="font-mono text-xs text-cyan tracking-widest animate-pulse-glow">ТОИ ДВО РАН</span>
           <div className="w-2 h-2 border border-cyan/50 rotate-45" />
         </div>
 
-        <h1 className="font-display font-700 leading-[0.9] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          <span className="block text-6xl md:text-8xl text-white">ТЕХНОЛОГИИ</span>
-          <span className="block text-6xl md:text-8xl text-cyan glow-cyan">БУДУЩЕГО</span>
-          <span className="block text-6xl md:text-8xl text-white">СЕГОДНЯ</span>
+        <h1 className="font-display font-700 leading-[0.95] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+          <span className="block text-4xl md:text-6xl xl:text-7xl text-white">ИНЖИНИРИНГОВЫЙ</span>
+          <span className="block text-4xl md:text-6xl xl:text-7xl text-cyan glow-cyan">ЦЕНТР</span>
+          <span className="block text-4xl md:text-6xl xl:text-7xl text-white">ТОИ ДВО РАН</span>
         </h1>
 
-        <p className="font-body text-lg text-white/55 max-w-lg mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          Передовые разработки в области морских технологий, подводных систем и цифрового судостроения. Двадцать семь лет опыта — от концепции до серийного производства.
+        <p className="font-body text-base text-white/60 max-w-xl mb-2 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+          Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана
+        </p>
+        <p className="font-body text-sm text-white/40 max-w-xl mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+          Научно-исследовательский центр, специализирующийся на инновационных технологиях для исследования, мониторинга и устойчивого освоения морских ресурсов Дальнего Востока России.
         </p>
 
-        <div className="flex flex-wrap gap-4 mb-20 animate-fade-up delay-300" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          <button onClick={() => scrollTo('catalog')}
+        <div className="flex flex-wrap gap-4 mb-16 animate-fade-up delay-300" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+          <button onClick={() => scrollTo('directions')}
             className="clip-corner font-display text-sm tracking-widest px-8 py-4 font-600 transition-all hover:scale-105"
             style={{ background: 'var(--cyan)', color: 'var(--deep)', boxShadow: '0 0 30px rgba(0,229,255,.3)' }}>
-            КАТАЛОГ ТЕХНОЛОГИЙ
+            НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ
           </button>
           <button onClick={() => scrollTo('contacts')}
             className="clip-corner font-display text-sm tracking-widest px-8 py-4 font-400 transition-all hover:scale-105 text-cyan"
@@ -263,16 +342,17 @@ function HeroSection() {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up delay-400" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          {STATS.map((s, i) => (
-            <div key={i} className="clip-corner-sm p-4 text-center animate-counter-glow"
-              style={{ background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.12)' }}>
-              <div className="font-display text-3xl text-cyan glow-cyan leading-none">
-                {s.val}<span className="text-xl text-gold">{s.unit}</span>
-              </div>
-              <div className="font-mono text-[10px] text-white/35 tracking-widest mt-1">{s.label}</div>
-            </div>
-          ))}
+        <div className="clip-corner p-8 max-w-3xl animate-fade-up delay-400" style={{ opacity: 0, animationFillMode: 'forwards', background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.12)' }}>
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-4 h-px bg-gold" />
+            <span className="font-mono text-[9px] text-gold tracking-widest">МИССИЯ</span>
+          </div>
+          <p className="font-body text-sm text-white/65 leading-relaxed mb-3">
+            Инжиниринговый центр создан в ТОИ ДВО РАН с целью обеспечить технологическую безопасность, экономическое развитие и экологическую устойчивость морской деятельности в дальневосточном регионе.
+          </p>
+          <p className="font-body text-sm text-white/50 leading-relaxed">
+            Мы объединяем передовые научные исследования с практическими инженерными решениями, создавая технологии, которые помогают обществу лучше понимать, защищать и ответственно использовать богатства Мирового океана.
+          </p>
         </div>
       </div>
 
@@ -287,32 +367,57 @@ function HeroSection() {
 }
 
 function DirectionsSection() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
     <section id="directions" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-25" />
       <div className="relative max-w-7xl mx-auto px-6">
-        <SectionLabel label="НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ" num="02" />
+        <SectionLabel label="ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ" num="02" />
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
-          ОСНОВНЫЕ <span className="text-cyan glow-cyan">НАПРАВЛЕНИЯ</span>
+          НАПРАВЛЕНИЯ <span className="text-cyan glow-cyan">ДЕЯТЕЛЬНОСТИ</span>
         </h2>
         <p className="font-body text-white/45 max-w-2xl mb-14">
-          Шесть ключевых технологических векторов, определяющих развитие отечественной морской отрасли.
+          Пять ключевых направлений работы центра — от экологического мониторинга до разработки специализированного оборудования.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div className="grid grid-cols-1 gap-4">
           {DIRECTIONS.map((d, i) => (
-            <div key={i} className="tech-card clip-corner p-6 group cursor-default"
-              style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(0,229,255,.08)' }}>
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 clip-corner-sm flex items-center justify-center flex-shrink-0"
+            <div key={i} className="clip-corner transition-all duration-300"
+              style={{
+                background: expanded === i ? 'rgba(0,229,255,.06)' : 'rgba(7,18,28,.85)',
+                border: `1px solid ${expanded === i ? 'rgba(0,229,255,.3)' : 'rgba(0,229,255,.08)'}`,
+              }}>
+              <button className="w-full text-left p-6 flex items-start gap-4" onClick={() => setExpanded(expanded === i ? null : i)}>
+                <div className="w-12 h-12 clip-corner-sm flex items-center justify-center flex-shrink-0 mt-0.5"
                   style={{ background: 'rgba(0,229,255,.08)', border: '1px solid rgba(0,229,255,.18)' }}>
                   <Icon name={d.icon as 'Waves'} size={20} className="text-cyan" fallback="Anchor" />
                 </div>
-                <span className="font-mono text-[8px] text-gold/60 tracking-widest border border-gold/15 px-2 py-1">{d.tag}</span>
+                <div className="flex-1">
+                  <div className="font-mono text-[9px] text-gold/55 tracking-widest mb-1">{d.tag}</div>
+                  <h3 className="font-display text-lg md:text-xl font-500 text-white transition-colors">{d.title}</h3>
+                  <p className="font-body text-sm text-white/45 mt-1 leading-relaxed">{d.desc}</p>
+                </div>
+                <Icon name={expanded === i ? 'ChevronUp' : 'ChevronDown'} size={16} className="text-cyan/40 flex-shrink-0 mt-1" />
+              </button>
+
+              <div className={`overflow-hidden transition-all duration-400 ${expanded === i ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                {d.items.length > 0 && (
+                  <div className="px-6 pb-6" style={{ paddingLeft: '88px' }}>
+                    <ul className="space-y-2">
+                      {d.items.map((item, j) => (
+                        <li key={j} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 bg-cyan rounded-full flex-shrink-0 mt-2" />
+                          <span className="font-body text-sm text-white/60 leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {d.footer && (
+                      <p className="font-body text-sm text-white/35 leading-relaxed mt-4 italic">{d.footer}</p>
+                    )}
+                  </div>
+                )}
               </div>
-              <h3 className="font-display text-lg font-500 text-white mb-2 group-hover:text-cyan transition-colors">{d.title}</h3>
-              <p className="font-body text-sm text-white/45 leading-relaxed">{d.desc}</p>
-              <div className="mt-4 w-0 group-hover:w-full h-px transition-all duration-500"
-                style={{ background: 'var(--cyan)', boxShadow: '0 0 8px var(--cyan)' }} />
             </div>
           ))}
         </div>
@@ -323,21 +428,23 @@ function DirectionsSection() {
 
 function ServicesSection() {
   const [active, setActive] = useState<number | null>(null);
+
   return (
     <section id="services" className="py-24 relative"
       style={{ background: 'linear-gradient(180deg,var(--deep) 0%,#050e18 50%,var(--deep) 100%)' }}>
       <div className="relative max-w-7xl mx-auto px-6">
         <SectionLabel label="УСЛУГИ" num="03" />
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
-          ЧТО МЫ <span className="text-gold glow-gold">ПРЕДЛАГАЕМ</span>
+          НАШИ <span className="text-gold glow-gold">УСЛУГИ</span>
         </h2>
         <p className="font-body text-white/45 max-w-2xl mb-14">
-          Полный спектр услуг: от первичных исследований до серийного внедрения и сервисной поддержки.
+          Центр предоставляет широкий спектр научных, инженерных и консультационных услуг для государственных органов, промышленных предприятий и научных организаций.
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-white/5">
+
+        <div className="border border-white/5">
           {SERVICES.map((s, i) => (
             <button key={i} onClick={() => setActive(active === i ? null : i)}
-              className="text-left p-6 border-b border-r border-white/5 group transition-all duration-300"
+              className="w-full text-left p-6 border-b border-white/5 group transition-all duration-300"
               style={{
                 background: active === i ? 'rgba(0,229,255,.04)' : undefined,
                 borderColor: active === i ? 'rgba(0,229,255,.15)' : undefined,
@@ -346,90 +453,31 @@ function ServicesSection() {
                 <span className="font-mono text-3xl font-300 flex-shrink-0 leading-none"
                   style={{ color: active === i ? 'var(--cyan)' : 'rgba(255,255,255,.1)' }}>{s.num}</span>
                 <div className="flex-1">
-                  <h3 className="font-display text-base font-500 text-white group-hover:text-cyan transition-colors mb-1">{s.title}</h3>
-                  <div className={`overflow-hidden transition-all duration-300 ${active === i ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <p className="font-body text-sm text-white/45 leading-relaxed pt-1">{s.desc}</p>
+                  <h3 className="font-display text-base md:text-lg font-500 text-white group-hover:text-cyan transition-colors">{s.title}</h3>
+                  <div className={`overflow-hidden transition-all duration-400 ${active === i ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="mt-4 space-y-5">
+                      {s.subsections.map((sub, si) => (
+                        <div key={si}>
+                          {sub.label && (
+                            <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-2">{sub.label}</div>
+                          )}
+                          <ul className="space-y-1.5">
+                            {sub.items.map((item, ii) => (
+                              <li key={ii} className="flex items-start gap-3">
+                                <div className="w-1 h-1 bg-cyan/60 rounded-full flex-shrink-0 mt-2" />
+                                <span className="font-body text-sm text-white/50 leading-relaxed">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                      {s.subsections.length === 0 && (
+                        <p className="font-body text-sm text-white/35 italic">Подробности уточняйте у специалистов центра.</p>
+                      )}
+                    </div>
                   </div>
                 </div>
                 <Icon name={active === i ? 'ChevronUp' : 'ChevronDown'} size={14} className="text-cyan/40 flex-shrink-0 mt-1" />
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function CatalogSection() {
-  const [selected, setSelected] = useState<string | null>(null);
-  const [filter, setFilter] = useState('ВСЕ');
-  const categories = ['ВСЕ', ...Array.from(new Set(TECHNOLOGIES.map(t => t.category)))];
-  const filtered = filter === 'ВСЕ' ? TECHNOLOGIES : TECHNOLOGIES.filter(t => t.category === filter);
-
-  return (
-    <section id="catalog" className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="relative max-w-7xl mx-auto px-6">
-        <SectionLabel label="КАТАЛОГ ТЕХНОЛОГИЙ" num="04" />
-        <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
-          НАШИ <span className="text-cyan glow-cyan">РАЗРАБОТКИ</span>
-        </h2>
-        <p className="font-body text-white/45 max-w-2xl mb-10">
-          Нажмите на карточку для просмотра технических характеристик.
-        </p>
-
-        <div className="flex flex-wrap gap-2 mb-10">
-          {categories.map(cat => (
-            <button key={cat} onClick={() => setFilter(cat)}
-              className="font-mono text-[10px] tracking-widest px-4 py-2 transition-all"
-              style={{
-                background: filter === cat ? 'var(--cyan)' : 'rgba(0,229,255,.04)',
-                color: filter === cat ? 'var(--deep)' : 'rgba(0,229,255,.6)',
-                border: `1px solid ${filter === cat ? 'var(--cyan)' : 'rgba(0,229,255,.15)'}`,
-              }}>
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map(t => (
-            <button key={t.id} onClick={() => setSelected(selected === t.id ? null : t.id)}
-              className="tech-card clip-corner p-6 text-left group"
-              style={{
-                background: selected === t.id ? 'rgba(0,229,255,.07)' : 'rgba(7,18,28,.9)',
-                border: `1px solid ${selected === t.id ? 'rgba(0,229,255,.35)' : 'rgba(0,229,255,.08)'}`,
-                boxShadow: selected === t.id ? '0 0 30px rgba(0,229,255,.12)' : 'none',
-              }}>
-              <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-[8px] text-gold/55 tracking-widest">{t.category}</span>
-                <span className="font-mono text-[8px] tracking-widest px-2 py-0.5"
-                  style={{ color: STATUS_COLOR[t.status] || 'var(--cyan)', border: `1px solid ${STATUS_COLOR[t.status] || 'var(--cyan)'}40` }}>
-                  {t.status}
-                </span>
-              </div>
-              <div className="font-mono text-xs text-cyan/40 mb-1">{t.id}</div>
-              <h3 className="font-display text-base font-500 text-white mb-2 group-hover:text-cyan transition-colors leading-snug">{t.name}</h3>
-              <p className="font-body text-xs text-white/40 leading-relaxed mb-3">{t.desc}</p>
-
-              <div className={`overflow-hidden transition-all duration-400 ${selected === t.id ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
-                <div className="border-t border-cyan/10 pt-4 grid grid-cols-2 gap-2">
-                  {t.specs.map((sp, j) => (
-                    <div key={j} className="p-2"
-                      style={{ background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.08)' }}>
-                      <div className="font-mono text-[8px] text-white/25 tracking-widest mb-1">{sp.label}</div>
-                      <div className="font-display text-sm text-cyan">{sp.value}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2 mt-3">
-                <Icon name={selected === t.id ? 'ChevronUp' : 'ChevronDown'} size={12} className="text-cyan/35" />
-                <span className="font-mono text-[8px] text-cyan/35 tracking-widest">
-                  {selected === t.id ? 'СВЕРНУТЬ' : 'ХАРАКТЕРИСТИКИ'}
-                </span>
               </div>
             </button>
           ))}
@@ -444,39 +492,24 @@ function PartnersSection() {
     <section id="partners" className="py-24 relative"
       style={{ background: 'linear-gradient(180deg,var(--deep) 0%,#040c13 100%)' }}>
       <div className="relative max-w-7xl mx-auto px-6">
-        <SectionLabel label="ПАРТНЁРСТВО И СОТРУДНИЧЕСТВО" num="05" />
-        <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
-          НАШИ <span className="text-gold glow-gold">ПАРТНЁРЫ</span>
+        <SectionLabel label="ПАРТНЁРСТВО И СОТРУДНИЧЕСТВО" num="04" />
+        <h2 className="font-display text-3xl md:text-5xl font-700 text-white mb-3 mt-6">
+          РАБОТАЕМ ВМЕСТЕ ДЛЯ <span className="text-gold glow-gold">ОБЩЕГО БУДУЩЕГО</span>
         </h2>
         <p className="font-body text-white/45 max-w-2xl mb-14">
-          Открыты для сотрудничества с промышленными предприятиями, научными организациями и институтами развития.
+          Центр активно сотрудничает с ведущими научными и промышленными организациями, создавая синергию между фундаментальной наукой и реальным сектором экономики.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+        <div className="font-mono text-[10px] text-cyan/50 tracking-widest mb-6">НАШИ ПАРТНЁРЫ</div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {PARTNERS.map((p, i) => (
             <div key={i} className="tech-card clip-corner p-6 group"
               style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(240,185,64,.08)' }}>
-              <div className="font-mono text-[9px] text-gold/45 tracking-widest mb-2">{p.type}</div>
-              <h3 className="font-display text-2xl font-700 text-white group-hover:text-gold transition-colors mb-1">{p.name}</h3>
-              <p className="font-body text-sm text-white/35">{p.full}</p>
+              <h3 className="font-display text-xl font-700 text-white group-hover:text-gold transition-colors mb-2">{p.name}</h3>
+              <p className="font-body text-sm text-white/35 leading-relaxed">{p.full}</p>
             </div>
           ))}
-        </div>
-
-        <div className="clip-corner p-10 text-center"
-          style={{ background: 'rgba(240,185,64,.03)', border: '1px solid rgba(240,185,64,.18)' }}>
-          <div className="font-mono text-[9px] text-gold/50 tracking-widest mb-4">СТАТЬ ПАРТНЁРОМ</div>
-          <h3 className="font-display text-3xl md:text-4xl font-700 text-white mb-3">
-            Готовы к <span className="text-gold glow-gold">сотрудничеству</span>?
-          </h3>
-          <p className="font-body text-white/45 max-w-lg mx-auto mb-8">
-            Рассмотрим совместные НИР, технологическую кооперацию, лицензирование разработок и создание совместных лабораторий.
-          </p>
-          <button onClick={() => scrollTo('contacts')}
-            className="clip-corner font-display text-sm tracking-widest px-10 py-4 font-600 transition-all hover:scale-105"
-            style={{ background: 'var(--gold)', color: 'var(--deep)', boxShadow: '0 0 30px rgba(240,185,64,.25)' }}>
-            ПРЕДЛОЖИТЬ СОТРУДНИЧЕСТВО
-          </button>
         </div>
       </div>
     </section>
@@ -490,7 +523,7 @@ function ContactsSection() {
     <section id="contacts" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
       <div className="relative max-w-7xl mx-auto px-6">
-        <SectionLabel label="КОНТАКТЫ" num="06" />
+        <SectionLabel label="КОНТАКТЫ" num="05" />
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
           СВЯЖИТЕСЬ <span className="text-cyan glow-cyan">С НАМИ</span>
         </h2>
@@ -500,24 +533,54 @@ function ContactsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
+            <div className="font-mono text-[9px] text-cyan/40 tracking-widest mb-6">ИНЖИНИРИНГОВЫЙ ЦЕНТР ТОИ ДВО РАН</div>
             <div className="space-y-5 mb-10">
-              {[
-                { icon: 'MapPin', label: 'АДРЕС', val: 'г. Санкт-Петербург, Большой Смоленский пр., д. 36' },
-                { icon: 'Phone', label: 'ТЕЛЕФОН', val: '+7 (812) 000-00-00' },
-                { icon: 'Mail', label: 'EMAIL', val: 'info@maritime-tech.ru' },
-                { icon: 'Clock', label: 'РЕЖИМ РАБОТЫ', val: 'Пн–Пт: 9:00–18:00' },
-              ].map((c, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
-                    <Icon name={c.icon as 'MapPin'} size={16} className="text-cyan" fallback="Info" />
-                  </div>
-                  <div>
-                    <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">{c.label}</div>
-                    <div className="font-body text-white/75">{c.val}</div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
+                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
+                  <Icon name="Building2" size={16} className="text-cyan" fallback="Info" />
+                </div>
+                <div>
+                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">ОРГАНИЗАЦИЯ</div>
+                  <div className="font-body text-white/70 text-sm leading-relaxed">
+                    Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана (Инжиниринговый центр ТОИ ДВО РАН)
                   </div>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
+                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
+                  <Icon name="MapPin" size={16} className="text-cyan" fallback="Info" />
+                </div>
+                <div>
+                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">АДРЕС</div>
+                  <div className="font-body text-white/70 text-sm leading-relaxed">
+                    Россия, Приморский Край<br />
+                    690041, г. Владивосток, ул. Балтийская, 43, ТОИ ДВО РАН
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
+                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
+                  <Icon name="UserCheck" size={16} className="text-cyan" fallback="Info" />
+                </div>
+                <div>
+                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">НАУЧНЫЙ РУКОВОДИТЕЛЬ</div>
+                  <div className="font-body text-white/70 text-sm">Лобанов Вячеслав Борисович, к.г.н.</div>
+                  <a href="mailto:lobanov@poi.dvo.ru" className="font-mono text-xs text-cyan/60 hover:text-cyan transition-colors">lobanov@poi.dvo.ru</a>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
+                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
+                  <Icon name="User" size={16} className="text-cyan" fallback="Info" />
+                </div>
+                <div>
+                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">НАЧАЛЬНИК ЦЕНТРА</div>
+                  <div className="font-body text-white/70 text-sm">Середа Амртатжути Владимировна</div>
+                </div>
+              </div>
             </div>
 
             <div className="clip-corner p-6" style={{ background: 'rgba(0,229,255,.03)', border: '1px solid rgba(0,229,255,.1)' }}>
@@ -529,9 +592,9 @@ function ContactsSection() {
               </div>
               <div className="font-mono text-xs space-y-1.5">
                 <div><span className="text-cyan/30">$</span> <span className="text-white/50">status --all</span></div>
-                <div className="text-green-400/60">✓ Navigation systems: ONLINE</div>
-                <div className="text-green-400/60">✓ Research lab: ACTIVE</div>
-                <div className="text-green-400/60">✓ Tech support: READY</div>
+                <div className="text-green-400/60">✓ Research center: ACTIVE</div>
+                <div className="text-green-400/60">✓ Engineering lab: ONLINE</div>
+                <div className="text-green-400/60">✓ Expeditions: PLANNED</div>
                 <div className="text-cyan/30">$ <span className="animate-blink">_</span></div>
               </div>
             </div>
@@ -542,7 +605,7 @@ function ContactsSection() {
             <div className="space-y-4">
               {[
                 { key: 'name', label: 'ИМЯ И ФАМИЛИЯ', type: 'text', ph: 'Иванов Иван Иванович' },
-                { key: 'org', label: 'ОРГАНИЗАЦИЯ', type: 'text', ph: 'ООО «Название»' },
+                { key: 'org', label: 'ОРГАНИЗАЦИЯ', type: 'text', ph: 'Название организации' },
                 { key: 'email', label: 'EMAIL', type: 'email', ph: 'ivan@company.ru' },
                 { key: 'phone', label: 'ТЕЛЕФОН', type: 'tel', ph: '+7 (___) ___-__-__' },
               ].map(f => (
@@ -583,10 +646,10 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="w-5 h-5 border border-cyan/30 rounded-full" />
-          <span className="font-display text-xs tracking-widest text-white/30">ЦЕНТР МОРСКИХ ТЕХНОЛОГИЙ © 2026</span>
+          <span className="font-display text-xs tracking-widest text-white/30">ИНЖИНИРИНГОВЫЙ ЦЕНТР ТОИ ДВО РАН © 2026</span>
         </div>
         <div className="flex items-center gap-6">
-          {['ГЛАВНАЯ','ТЕХНОЛОГИИ','УСЛУГИ','КОНТАКТЫ'].map(l => (
+          {['ГЛАВНАЯ','НАПРАВЛЕНИЯ','УСЛУГИ','КОНТАКТЫ'].map(l => (
             <button key={l} className="font-mono text-[8px] tracking-widest text-white/20 hover:text-cyan/50 transition-colors">{l}</button>
           ))}
         </div>
@@ -606,7 +669,6 @@ export default function Index() {
       <HeroSection />
       <DirectionsSection />
       <ServicesSection />
-      <CatalogSection />
       <PartnersSection />
       <ContactsSection />
       <Footer />
