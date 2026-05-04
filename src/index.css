@@ -37,9 +37,9 @@
     /* Custom vars */
     --cyan: #00e5ff;
     --gold: #f0b940;
-    --deep: #020d14;
-    --surface: #07121c;
-    --surface2: #0b1a26;
+    --deep: #010810;
+    --surface: #040f18;
+    --surface2: #071520;
   }
 }
 
@@ -57,6 +57,7 @@
     font-family: "IBM Plex Sans", sans-serif;
     background-color: var(--deep);
     overflow-x: hidden;
+    font-size: 18px;
   }
 
   h1,

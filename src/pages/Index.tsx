@@ -271,8 +271,8 @@ function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={HERO_IMG} alt="Морские технологии" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,rgba(2,13,20,.95) 0%,rgba(2,13,20,.5) 55%,rgba(2,13,20,.9) 100%)' }} />
+        <img src={HERO_IMG} alt="Морские технологии" className="w-full h-full object-cover opacity-45" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg,rgba(1,8,16,.92) 0%,rgba(1,8,16,.35) 55%,rgba(1,8,16,.85) 100%)' }} />
       </div>
       <div className="absolute inset-0 grid-bg opacity-40" />
 
@@ -350,22 +350,22 @@ function HeroSection() {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
+      <div className="relative max-w-5xl mx-auto px-6 pt-32 pb-20 text-center">
 
         <h1 className="font-display font-700 leading-[0.95] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          <span className="block text-4xl md:text-6xl xl:text-7xl text-white">ИНЖИНИРИНГОВЫЙ</span>
-          <span className="block text-4xl md:text-6xl xl:text-7xl text-cyan glow-cyan">ЦЕНТР</span>
-          <span className="block text-4xl md:text-6xl xl:text-7xl text-white">ТОИ ДВО РАН</span>
+          <span className="block text-5xl md:text-7xl xl:text-8xl text-white">ИНЖИНИРИНГОВЫЙ</span>
+          <span className="block text-5xl md:text-7xl xl:text-8xl text-cyan glow-cyan">ЦЕНТР</span>
+          <span className="block text-5xl md:text-7xl xl:text-8xl text-white">ТОИ ДВО РАН</span>
         </h1>
 
-        <p className="font-body text-base text-white/60 max-w-xl mb-2 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+        <p className="font-body text-lg text-white/70 mb-2 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана
         </p>
-        <p className="font-body text-base text-white/60 max-w-xl mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+        <p className="font-body text-base text-white/60 mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           Научно-исследовательский центр, специализирующийся на инновационных технологиях для исследования, мониторинга и устойчивого освоения морских ресурсов Дальнего Востока России.
         </p>
 
-        <div className="flex flex-wrap gap-4 mb-16 animate-fade-up delay-300" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-up delay-300" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           <button onClick={() => scrollTo('directions')}
             className="clip-corner font-display text-sm tracking-widest px-8 py-4 font-600 transition-all hover:scale-105"
             style={{ background: 'var(--cyan)', color: 'var(--deep)', boxShadow: '0 0 30px rgba(0,229,255,.3)' }}>
@@ -373,12 +373,12 @@ function HeroSection() {
           </button>
         </div>
 
-        <div className="clip-corner p-8 max-w-3xl animate-fade-up delay-400" style={{ opacity: 0, animationFillMode: 'forwards', background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.12)' }}>
+        <div className="clip-corner p-8 mx-auto max-w-3xl text-left animate-fade-up delay-400" style={{ opacity: 0, animationFillMode: 'forwards', background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.12)' }}>
           <div className="flex items-center gap-2 mb-4">
             <div className="w-4 h-px bg-gold" />
-            <span className="font-mono text-[9px] text-gold tracking-widest">МИССИЯ</span>
+            <span className="font-mono text-[10px] text-gold tracking-widest">МИССИЯ</span>
           </div>
-          <p className="font-body text-base text-white/75 leading-relaxed mb-3">
+          <p className="font-body text-lg text-white/75 leading-relaxed mb-3">
             Инжиниринговый центр создан в ТОИ ДВО РАН с целью обеспечить технологическую безопасность, экономическое развитие и экологическую устойчивость морской деятельности в дальневосточном регионе.
           </p>
           <p className="font-body text-base text-white/60 leading-relaxed">
@@ -398,16 +398,16 @@ function DirectionsSection() {
   return (
     <section id="directions" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-25" />
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <SectionLabel label="ОСНОВНЫЕ НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ" num="02" />
-        <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
+        <h2 className="font-display text-4xl md:text-6xl font-700 text-white mb-3 mt-6">
           НАПРАВЛЕНИЯ <span className="text-cyan glow-cyan">ДЕЯТЕЛЬНОСТИ</span>
         </h2>
-        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
+        <p className="font-body text-lg text-white/65 max-w-2xl mx-auto mb-14 leading-relaxed">
           Пять ключевых направлений работы центра — от экологического мониторинга до разработки специализированного оборудования.
         </p>
 
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 text-left">
           {DIRECTIONS.map((d, i) => (
             <div key={i} className="clip-corner transition-all duration-300"
               style={{
@@ -458,16 +458,16 @@ function ServicesSection() {
   return (
     <section id="services" className="py-24 relative"
       style={{ background: 'linear-gradient(180deg,var(--deep) 0%,#050e18 50%,var(--deep) 100%)' }}>
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <SectionLabel label="УСЛУГИ" num="03" />
-        <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
+        <h2 className="font-display text-4xl md:text-6xl font-700 text-white mb-3 mt-6">
           НАШИ <span className="text-gold glow-gold">УСЛУГИ</span>
         </h2>
-        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
+        <p className="font-body text-lg text-white/65 max-w-2xl mx-auto mb-14 leading-relaxed">
           Центр предоставляет широкий спектр научных, инженерных и консультационных услуг для государственных органов, промышленных предприятий и научных организаций.
         </p>
 
-        <div className="border border-white/5">
+        <div className="border border-white/5 text-left">
           {SERVICES.map((s, i) => (
             <button key={i} onClick={() => setActive(active === i ? null : i)}
               className="w-full text-left p-6 border-b border-white/5 group transition-all duration-300"
@@ -517,12 +517,12 @@ function PartnersSection() {
   return (
     <section id="partners" className="py-24 relative"
       style={{ background: 'linear-gradient(180deg,var(--deep) 0%,#040c13 100%)' }}>
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <SectionLabel label="ПАРТНЁРСТВО И СОТРУДНИЧЕСТВО" num="04" />
-        <h2 className="font-display text-3xl md:text-5xl font-700 text-white mb-3 mt-6">
+        <h2 className="font-display text-4xl md:text-6xl font-700 text-white mb-3 mt-6">
           РАБОТАЕМ ВМЕСТЕ ДЛЯ <span className="text-gold glow-gold">ОБЩЕГО БУДУЩЕГО</span>
         </h2>
-        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
+        <p className="font-body text-lg text-white/65 max-w-2xl mx-auto mb-14 leading-relaxed">
           Центр активно сотрудничает с ведущими научными и промышленными организациями, создавая синергию между фундаментальной наукой и реальным сектором экономики.
         </p>
 
@@ -546,16 +546,16 @@ function ContactsSection() {
   return (
     <section id="contacts" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-6 text-center">
         <SectionLabel label="КОНТАКТЫ" num="05" />
-        <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
+        <h2 className="font-display text-4xl md:text-6xl font-700 text-white mb-3 mt-6">
           СВЯЖИТЕСЬ <span className="text-cyan glow-cyan">С НАМИ</span>
         </h2>
-        <p className="font-body text-base text-white/60 max-w-2xl mb-14 leading-relaxed">
+        <p className="font-body text-lg text-white/60 max-w-2xl mx-auto mb-14 leading-relaxed">
           Наша команда готова ответить на вопросы о технологиях, условиях сотрудничества и текущих проектах.
         </p>
 
-        <div className="clip-corner p-10 max-w-2xl" style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(0,229,255,.12)' }}>
+        <div className="clip-corner p-10 max-w-2xl mx-auto text-left" style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(0,229,255,.12)' }}>
           <div className="space-y-7">
             <div>
               <div className="font-mono text-[10px] text-cyan/45 tracking-widest mb-2">ОРГАНИЗАЦИЯ</div>
