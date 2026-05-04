@@ -230,7 +230,7 @@ function NavBar() {
             src="https://cdn.poehali.dev/projects/bdfad9d8-9f83-48f9-9f69-fab002e51705/bucket/526f0cb5-347c-4150-9854-25f1d92c2852.png"
             alt="Логотип ИЦ ТОИ ДВО РАН"
             className="w-12 h-12 object-contain flex-shrink-0"
-            style={{ filter: 'drop-shadow(0 0 6px rgba(0,229,255,0.3))' }}
+            style={{ mixBlendMode: 'screen', filter: 'drop-shadow(0 0 6px rgba(0,229,255,0.3))' }}
           />
           <div>
             <div className="font-display text-sm font-500 tracking-widest text-cyan leading-none">ИЦ ТОИ ДВО РАН</div>
@@ -282,22 +282,13 @@ function HeroSection() {
         style={{ background: 'radial-gradient(circle,rgba(240,185,64,.12) 0%,transparent 70%)', filter: 'blur(60px)', animationDelay: '2s' }} />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <div className="flex items-center gap-6 mb-10 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+        <div className="mb-10 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           <img
             src="https://cdn.poehali.dev/projects/bdfad9d8-9f83-48f9-9f69-fab002e51705/bucket/526f0cb5-347c-4150-9854-25f1d92c2852.png"
             alt="Логотип ИЦ ТОИ ДВО РАН"
-            className="w-28 h-28 md:w-36 md:h-36 object-contain flex-shrink-0 animate-float"
-            style={{ filter: 'drop-shadow(0 0 20px rgba(0,229,255,0.35)) drop-shadow(0 0 50px rgba(0,229,255,0.15))' }}
+            className="w-28 h-28 md:w-36 md:h-36 object-contain flex-shrink-0"
+            style={{ mixBlendMode: 'screen', filter: 'drop-shadow(0 0 16px rgba(0,229,255,0.3))' }}
           />
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <div className="w-6 h-px bg-cyan" />
-              <span className="font-mono text-[10px] text-cyan tracking-widest animate-pulse-glow">ТОИ ДВО РАН</span>
-            </div>
-            <div className="font-mono text-[9px] text-white/30 tracking-widest leading-relaxed max-w-xs">
-              ТИХООКЕАНСКИЙ ОКЕАНОЛОГИЧЕСКИЙ ИНСТИТУТ<br />ДАЛЬНЕВОСТОЧНОГО ОТДЕЛЕНИЯ РАН
-            </div>
-          </div>
         </div>
 
         <h1 className="font-display font-700 leading-[0.95] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
