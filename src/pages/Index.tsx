@@ -226,11 +226,12 @@ function NavBar() {
       }}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <button onClick={() => scrollTo('hero')} className="flex items-center gap-3">
-          <div className="relative w-10 h-10 flex-shrink-0">
-            <div className="absolute inset-0 border border-cyan/30 rounded-full animate-rotate-slow" />
-            <div className="absolute w-5 h-5 border border-gold/40 top-2.5 left-2.5 rotate-45" />
-            <div className="absolute w-2 h-2 bg-cyan rounded-full top-4 left-4 animate-pulse-glow" />
-          </div>
+          <img
+            src="https://cdn.poehali.dev/projects/bdfad9d8-9f83-48f9-9f69-fab002e51705/bucket/526f0cb5-347c-4150-9854-25f1d92c2852.png"
+            alt="Логотип ИЦ ТОИ ДВО РАН"
+            className="w-12 h-12 object-contain flex-shrink-0"
+            style={{ filter: 'drop-shadow(0 0 6px rgba(0,229,255,0.3))' }}
+          />
           <div>
             <div className="font-display text-sm font-500 tracking-widest text-cyan leading-none">ИЦ ТОИ ДВО РАН</div>
             <div className="font-mono text-[8px] text-white/30 tracking-widest">ИНЖИНИРИНГОВЫЙ ЦЕНТР</div>
@@ -310,10 +311,22 @@ function HeroSection() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <div className="flex items-center gap-3 mb-8 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          <div className="w-8 h-px bg-cyan" />
-          <span className="font-mono text-xs text-cyan tracking-widest animate-pulse-glow">ТОИ ДВО РАН</span>
-          <div className="w-2 h-2 border border-cyan/50 rotate-45" />
+        <div className="flex items-center gap-6 mb-10 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+          <img
+            src="https://cdn.poehali.dev/projects/bdfad9d8-9f83-48f9-9f69-fab002e51705/bucket/526f0cb5-347c-4150-9854-25f1d92c2852.png"
+            alt="Логотип ИЦ ТОИ ДВО РАН"
+            className="w-28 h-28 md:w-36 md:h-36 object-contain flex-shrink-0 animate-float"
+            style={{ filter: 'drop-shadow(0 0 20px rgba(0,229,255,0.35)) drop-shadow(0 0 50px rgba(0,229,255,0.15))' }}
+          />
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="w-6 h-px bg-cyan" />
+              <span className="font-mono text-[10px] text-cyan tracking-widest animate-pulse-glow">ТОИ ДВО РАН</span>
+            </div>
+            <div className="font-mono text-[9px] text-white/30 tracking-widest leading-relaxed max-w-xs">
+              ТИХООКЕАНСКИЙ ОКЕАНОЛОГИЧЕСКИЙ ИНСТИТУТ<br />ДАЛЬНЕВОСТОЧНОГО ОТДЕЛЕНИЯ РАН
+            </div>
+          </div>
         </div>
 
         <h1 className="font-display font-700 leading-[0.95] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
