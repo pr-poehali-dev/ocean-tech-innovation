@@ -276,20 +276,81 @@ function HeroSection() {
       </div>
       <div className="absolute inset-0 grid-bg opacity-40" />
 
+      {/* Светящиеся орбы */}
       <div className="absolute top-1/3 right-1/3 w-96 h-96 rounded-full animate-float pointer-events-none"
         style={{ background: 'radial-gradient(circle,rgba(0,229,255,.15) 0%,transparent 70%)', filter: 'blur(50px)' }} />
       <div className="absolute bottom-1/4 left-1/5 w-72 h-72 rounded-full animate-float pointer-events-none"
         style={{ background: 'radial-gradient(circle,rgba(240,185,64,.12) 0%,transparent 70%)', filter: 'blur(60px)', animationDelay: '2s' }} />
 
+      {/* Морская SVG-анимация */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden" style={{ height: '220px' }}>
+        <svg viewBox="0 0 1440 220" preserveAspectRatio="none" className="absolute bottom-0 w-full h-full">
+          <defs>
+            <linearGradient id="wave1g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(0,229,255,0.12)" />
+              <stop offset="100%" stopColor="rgba(0,229,255,0)" />
+            </linearGradient>
+            <linearGradient id="wave2g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(0,180,255,0.08)" />
+              <stop offset="100%" stopColor="rgba(0,180,255,0)" />
+            </linearGradient>
+            <linearGradient id="wave3g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="rgba(240,185,64,0.07)" />
+              <stop offset="100%" stopColor="rgba(240,185,64,0)" />
+            </linearGradient>
+          </defs>
+          {/* Волна 3 — задний план */}
+          <path fill="url(#wave3g)" style={{ animation: 'waveMove3 11s ease-in-out infinite' }}>
+            <animate attributeName="d" dur="11s" repeatCount="indefinite"
+              values="M0,160 C240,100 480,190 720,140 C960,90 1200,170 1440,130 L1440,220 L0,220 Z;
+                      M0,140 C200,180 480,110 720,160 C960,200 1200,120 1440,155 L1440,220 L0,220 Z;
+                      M0,160 C240,100 480,190 720,140 C960,90 1200,170 1440,130 L1440,220 L0,220 Z"/>
+          </path>
+          {/* Волна 2 */}
+          <path fill="url(#wave2g)">
+            <animate attributeName="d" dur="8s" repeatCount="indefinite"
+              values="M0,140 C360,80 720,180 1080,120 C1260,90 1380,150 1440,130 L1440,220 L0,220 Z;
+                      M0,120 C300,170 660,100 1000,155 C1200,185 1360,120 1440,145 L1440,220 L0,220 Z;
+                      M0,140 C360,80 720,180 1080,120 C1260,90 1380,150 1440,130 L1440,220 L0,220 Z"/>
+          </path>
+          {/* Волна 1 — передний план */}
+          <path fill="url(#wave1g)">
+            <animate attributeName="d" dur="6s" repeatCount="indefinite"
+              values="M0,170 C180,130 360,195 540,160 C720,125 900,185 1080,150 C1260,115 1380,165 1440,145 L1440,220 L0,220 Z;
+                      M0,150 C200,185 400,130 600,170 C800,205 1000,145 1200,175 C1320,190 1400,150 1440,160 L1440,220 L0,220 Z;
+                      M0,170 C180,130 360,195 540,160 C720,125 900,185 1080,150 C1260,115 1380,165 1440,145 L1440,220 L0,220 Z"/>
+          </path>
+          {/* Светящаяся линия-прибой */}
+          <path fill="none" stroke="rgba(0,229,255,0.25)" strokeWidth="1.5">
+            <animate attributeName="d" dur="6s" repeatCount="indefinite"
+              values="M0,170 C180,130 360,195 540,160 C720,125 900,185 1080,150 C1260,115 1380,165 1440,145;
+                      M0,150 C200,185 400,130 600,170 C800,205 1000,145 1200,175 C1320,190 1400,150 1440,160;
+                      M0,170 C180,130 360,195 540,160 C720,125 900,185 1080,150 C1260,115 1380,165 1440,145"/>
+          </path>
+        </svg>
+
+        {/* Пузырьки */}
+        {[
+          { left: '10%', delay: '0s', dur: '7s', size: 3 },
+          { left: '25%', delay: '1.5s', dur: '9s', size: 2 },
+          { left: '42%', delay: '3s', dur: '6s', size: 4 },
+          { left: '58%', delay: '0.8s', dur: '8s', size: 2 },
+          { left: '73%', delay: '2.2s', dur: '7s', size: 3 },
+          { left: '88%', delay: '4s', dur: '10s', size: 2 },
+        ].map((b, i) => (
+          <div key={i} className="absolute bottom-4 rounded-full"
+            style={{
+              left: b.left,
+              width: b.size * 4,
+              height: b.size * 4,
+              background: 'rgba(0,229,255,0.4)',
+              boxShadow: '0 0 6px rgba(0,229,255,0.6)',
+              animation: `bubbleRise ${b.dur} ease-in ${b.delay} infinite`,
+            }} />
+        ))}
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-        <div className="mb-10 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-          <img
-            src="https://cdn.poehali.dev/projects/bdfad9d8-9f83-48f9-9f69-fab002e51705/bucket/526f0cb5-347c-4150-9854-25f1d92c2852.png"
-            alt="Логотип ИЦ ТОИ ДВО РАН"
-            className="w-28 h-28 md:w-36 md:h-36 object-contain flex-shrink-0"
-            style={{ mixBlendMode: 'screen', filter: 'drop-shadow(0 0 16px rgba(0,229,255,0.3))' }}
-          />
-        </div>
 
         <h1 className="font-display font-700 leading-[0.95] mb-6 animate-fade-up delay-100" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           <span className="block text-4xl md:text-6xl xl:text-7xl text-white">ИНЖИНИРИНГОВЫЙ</span>
