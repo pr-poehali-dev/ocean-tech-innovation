@@ -361,7 +361,7 @@ function HeroSection() {
         <p className="font-body text-base text-white/60 max-w-xl mb-2 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана
         </p>
-        <p className="font-body text-sm text-white/40 max-w-xl mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
+        <p className="font-body text-base text-white/60 max-w-xl mb-12 leading-relaxed animate-fade-up delay-200" style={{ opacity: 0, animationFillMode: 'forwards' }}>
           Научно-исследовательский центр, специализирующийся на инновационных технологиях для исследования, мониторинга и устойчивого освоения морских ресурсов Дальнего Востока России.
         </p>
 
@@ -378,10 +378,10 @@ function HeroSection() {
             <div className="w-4 h-px bg-gold" />
             <span className="font-mono text-[9px] text-gold tracking-widest">МИССИЯ</span>
           </div>
-          <p className="font-body text-sm text-white/65 leading-relaxed mb-3">
+          <p className="font-body text-base text-white/75 leading-relaxed mb-3">
             Инжиниринговый центр создан в ТОИ ДВО РАН с целью обеспечить технологическую безопасность, экономическое развитие и экологическую устойчивость морской деятельности в дальневосточном регионе.
           </p>
-          <p className="font-body text-sm text-white/50 leading-relaxed">
+          <p className="font-body text-base text-white/60 leading-relaxed">
             Мы объединяем передовые научные исследования с практическими инженерными решениями, создавая технологии, которые помогают обществу лучше понимать, защищать и ответственно использовать богатства Мирового океана.
           </p>
         </div>
@@ -403,7 +403,7 @@ function DirectionsSection() {
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
           НАПРАВЛЕНИЯ <span className="text-cyan glow-cyan">ДЕЯТЕЛЬНОСТИ</span>
         </h2>
-        <p className="font-body text-white/45 max-w-2xl mb-14">
+        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
           Пять ключевых направлений работы центра — от экологического мониторинга до разработки специализированного оборудования.
         </p>
 
@@ -422,7 +422,7 @@ function DirectionsSection() {
                 <div className="flex-1">
                   <div className="font-mono text-[9px] text-gold/55 tracking-widest mb-1">{d.tag}</div>
                   <h3 className="font-display text-lg md:text-xl font-500 text-white transition-colors">{d.title}</h3>
-                  <p className="font-body text-sm text-white/45 mt-1 leading-relaxed">{d.desc}</p>
+                  <p className="font-body text-base text-white/65 mt-1 leading-relaxed">{d.desc}</p>
                 </div>
                 <Icon name={expanded === i ? 'ChevronUp' : 'ChevronDown'} size={16} className="text-cyan/40 flex-shrink-0 mt-1" />
               </button>
@@ -434,12 +434,12 @@ function DirectionsSection() {
                       {d.items.map((item, j) => (
                         <li key={j} className="flex items-start gap-3">
                           <div className="w-1.5 h-1.5 bg-cyan rounded-full flex-shrink-0 mt-2" />
-                          <span className="font-body text-sm text-white/60 leading-relaxed">{item}</span>
+                          <span className="font-body text-base text-white/70 leading-relaxed">{item}</span>
                         </li>
                       ))}
                     </ul>
                     {d.footer && (
-                      <p className="font-body text-sm text-white/35 leading-relaxed mt-4 italic">{d.footer}</p>
+                      <p className="font-body text-base text-white/55 leading-relaxed mt-4 italic">{d.footer}</p>
                     )}
                   </div>
                 )}
@@ -463,7 +463,7 @@ function ServicesSection() {
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
           НАШИ <span className="text-gold glow-gold">УСЛУГИ</span>
         </h2>
-        <p className="font-body text-white/45 max-w-2xl mb-14">
+        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
           Центр предоставляет широкий спектр научных, инженерных и консультационных услуг для государственных органов, промышленных предприятий и научных организаций.
         </p>
 
@@ -491,14 +491,14 @@ function ServicesSection() {
                             {sub.items.map((item, ii) => (
                               <li key={ii} className="flex items-start gap-3">
                                 <div className="w-1 h-1 bg-cyan/60 rounded-full flex-shrink-0 mt-2" />
-                                <span className="font-body text-sm text-white/50 leading-relaxed">{item}</span>
+                                <span className="font-body text-base text-white/70 leading-relaxed">{item}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                       ))}
                       {s.subsections.length === 0 && (
-                        <p className="font-body text-sm text-white/35 italic">Подробности уточняйте у специалистов центра.</p>
+                        <p className="font-body text-base text-white/55 italic">Подробности уточняйте у специалистов центра.</p>
                       )}
                     </div>
                   </div>
@@ -522,7 +522,7 @@ function PartnersSection() {
         <h2 className="font-display text-3xl md:text-5xl font-700 text-white mb-3 mt-6">
           РАБОТАЕМ ВМЕСТЕ ДЛЯ <span className="text-gold glow-gold">ОБЩЕГО БУДУЩЕГО</span>
         </h2>
-        <p className="font-body text-white/45 max-w-2xl mb-14">
+        <p className="font-body text-base text-white/65 max-w-2xl mb-14 leading-relaxed">
           Центр активно сотрудничает с ведущими научными и промышленными организациями, создавая синергию между фундаментальной наукой и реальным сектором экономики.
         </p>
 
@@ -533,7 +533,7 @@ function PartnersSection() {
             <div key={i} className="tech-card clip-corner p-6 group"
               style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(240,185,64,.08)' }}>
               <h3 className="font-display text-xl font-700 text-white group-hover:text-gold transition-colors mb-2">{p.name}</h3>
-              <p className="font-body text-sm text-white/35 leading-relaxed">{p.full}</p>
+              <p className="font-body text-base text-white/55 leading-relaxed">{p.full}</p>
             </div>
           ))}
         </div>
@@ -543,8 +543,6 @@ function PartnersSection() {
 }
 
 function ContactsSection() {
-  const [form, setForm] = useState({ name: '', org: '', email: '', phone: '', msg: '' });
-
   return (
     <section id="contacts" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
@@ -553,73 +551,36 @@ function ContactsSection() {
         <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-3 mt-6">
           СВЯЖИТЕСЬ <span className="text-cyan glow-cyan">С НАМИ</span>
         </h2>
-        <p className="font-body text-white/45 max-w-2xl mb-14">
+        <p className="font-body text-base text-white/60 max-w-2xl mb-14 leading-relaxed">
           Наша команда готова ответить на вопросы о технологиях, условиях сотрудничества и текущих проектах.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <div className="space-y-5">
-              <div>
-                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">ОРГАНИЗАЦИЯ</div>
-                <div className="font-body text-white/70 text-sm leading-relaxed">
-                  Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана (Инжиниринговый центр ТОИ ДВО РАН)
-                </div>
-              </div>
-              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
-              <div>
-                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">АДРЕС</div>
-                <div className="font-body text-white/70 text-sm leading-relaxed">
-                  Россия, Приморский Край<br />
-                  690041, г. Владивосток, ул. Балтийская, 43, ТОИ ДВО РАН
-                </div>
-              </div>
-              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
-              <div>
-                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">НАУЧНЫЙ РУКОВОДИТЕЛЬ</div>
-                <div className="font-body text-white/70 text-sm">Лобанов Вячеслав Борисович, к.г.н.</div>
-                <a href="mailto:lobanov@poi.dvo.ru" className="font-body text-sm text-cyan/60 hover:text-cyan transition-colors">lobanov@poi.dvo.ru</a>
-              </div>
-              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
-              <div>
-                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">НАЧАЛЬНИК ЦЕНТРА</div>
-                <div className="font-body text-white/70 text-sm">Середа Амртатжути Владимировна</div>
+        <div className="clip-corner p-10 max-w-2xl" style={{ background: 'rgba(7,18,28,.85)', border: '1px solid rgba(0,229,255,.12)' }}>
+          <div className="space-y-7">
+            <div>
+              <div className="font-mono text-[10px] text-cyan/45 tracking-widest mb-2">ОРГАНИЗАЦИЯ</div>
+              <div className="font-body text-base text-white/80 leading-relaxed">
+                Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана (Инжиниринговый центр ТОИ ДВО РАН)
               </div>
             </div>
-          </div>
-
-          <div className="clip-corner p-8" style={{ background: 'rgba(7,18,28,.9)', border: '1px solid rgba(0,229,255,.12)' }}>
-            <div className="font-mono text-xs text-cyan/40 tracking-widest mb-6">// ФОРМА ОБРАТНОЙ СВЯЗИ</div>
-            <div className="space-y-4">
-              {[
-                { key: 'name', label: 'ИМЯ И ФАМИЛИЯ', type: 'text', ph: 'Иванов Иван Иванович' },
-                { key: 'org', label: 'ОРГАНИЗАЦИЯ', type: 'text', ph: 'Название организации' },
-                { key: 'email', label: 'EMAIL', type: 'email', ph: 'ivan@company.ru' },
-                { key: 'phone', label: 'ТЕЛЕФОН', type: 'tel', ph: '+7 (___) ___-__-__' },
-              ].map(f => (
-                <div key={f.key}>
-                  <label className="font-mono text-[9px] text-cyan/40 tracking-widest block mb-1.5">{f.label}</label>
-                  <input type={f.type} placeholder={f.ph}
-                    value={form[f.key as keyof typeof form]}
-                    onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))}
-                    className="w-full px-4 py-3 font-body text-sm text-white/75 placeholder-white/15 outline-none transition-all"
-                    style={{ background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.1)' }}
-                  />
-                </div>
-              ))}
-              <div>
-                <label className="font-mono text-[9px] text-cyan/40 tracking-widest block mb-1.5">СООБЩЕНИЕ</label>
-                <textarea rows={4} placeholder="Опишите ваш запрос..."
-                  value={form.msg}
-                  onChange={e => setForm(p => ({ ...p, msg: e.target.value }))}
-                  className="w-full px-4 py-3 font-body text-sm text-white/75 placeholder-white/15 outline-none resize-none"
-                  style={{ background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.1)' }}
-                />
+            <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+            <div>
+              <div className="font-mono text-[10px] text-cyan/45 tracking-widest mb-2">АДРЕС</div>
+              <div className="font-body text-base text-white/80 leading-relaxed">
+                Россия, Приморский Край<br />
+                690041, г. Владивосток, ул. Балтийская, 43, ТОИ ДВО РАН
               </div>
-              <button className="w-full clip-corner font-display text-sm tracking-widest py-4 font-600 transition-all hover:scale-[1.02]"
-                style={{ background: 'var(--cyan)', color: 'var(--deep)', boxShadow: '0 0 20px rgba(0,229,255,.2)' }}>
-                ОТПРАВИТЬ ЗАПРОС
-              </button>
+            </div>
+            <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+            <div>
+              <div className="font-mono text-[10px] text-cyan/45 tracking-widest mb-2">НАУЧНЫЙ РУКОВОДИТЕЛЬ</div>
+              <div className="font-body text-base text-white/80">Лобанов Вячеслав Борисович, к.г.н.</div>
+              <a href="mailto:lobanov@poi.dvo.ru" className="font-body text-base text-cyan/70 hover:text-cyan transition-colors">lobanov@poi.dvo.ru</a>
+            </div>
+            <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+            <div>
+              <div className="font-mono text-[10px] text-cyan/45 tracking-widest mb-2">НАЧАЛЬНИК ЦЕНТРА</div>
+              <div className="font-body text-base text-white/80">Середа Амртатжути Владимировна</div>
             </div>
           </div>
         </div>
