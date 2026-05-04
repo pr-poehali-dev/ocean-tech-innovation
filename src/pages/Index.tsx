@@ -245,11 +245,6 @@ function NavBar() {
               {item.label}
             </button>
           ))}
-          <button onClick={() => scrollTo('contacts')}
-            className="clip-corner-sm font-display text-[11px] tracking-widest px-5 py-2.5 font-600 transition-all hover:scale-105"
-            style={{ background: 'var(--cyan)', color: 'var(--deep)' }}>
-            СВЯЗАТЬСЯ
-          </button>
         </div>
 
         <button className="lg:hidden" style={{ color: 'var(--cyan)' }} onClick={() => setOpen(o => !o)}>
@@ -285,30 +280,6 @@ function HeroSection() {
         style={{ background: 'radial-gradient(circle,rgba(0,229,255,.15) 0%,transparent 70%)', filter: 'blur(50px)' }} />
       <div className="absolute bottom-1/4 left-1/5 w-72 h-72 rounded-full animate-float pointer-events-none"
         style={{ background: 'radial-gradient(circle,rgba(240,185,64,.12) 0%,transparent 70%)', filter: 'blur(60px)', animationDelay: '2s' }} />
-
-      <div className="absolute right-16 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none">
-        <div className="relative w-72 h-72">
-          <div className="absolute inset-0 border border-cyan/15 rounded-full animate-rotate-slow" />
-          <div className="absolute inset-6 border border-gold/10 rounded-full" style={{ animation: 'rotate-slow 14s linear infinite reverse' }} />
-          <div className="absolute inset-12 border border-cyan/08 rounded-full animate-rotate-slow" style={{ animationDuration: '8s' }} />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-4">
-              <div className="font-mono text-[8px] text-cyan/40 tracking-widest mb-1">СТАТУС</div>
-              <div className="font-display text-xl text-cyan glow-cyan">ONLINE</div>
-              <div className="w-2 h-2 bg-cyan rounded-full mx-auto mt-2 animate-pulse-glow" />
-            </div>
-          </div>
-          {[0,60,120,180,240,300].map((deg,i) => (
-            <div key={i} className="absolute w-2 h-2 rounded-full"
-              style={{
-                background: i%2===0?'var(--cyan)':'var(--gold)',
-                top:`calc(50% + ${Math.sin(deg*Math.PI/180)*132}px - 4px)`,
-                left:`calc(50% + ${Math.cos(deg*Math.PI/180)*132}px - 4px)`,
-                boxShadow:`0 0 6px ${i%2===0?'var(--cyan)':'var(--gold)'}`,
-              }} />
-          ))}
-        </div>
-      </div>
 
       <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
         <div className="flex items-center gap-6 mb-10 animate-fade-up" style={{ opacity: 0, animationFillMode: 'forwards' }}>
@@ -348,11 +319,6 @@ function HeroSection() {
             style={{ background: 'var(--cyan)', color: 'var(--deep)', boxShadow: '0 0 30px rgba(0,229,255,.3)' }}>
             НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ
           </button>
-          <button onClick={() => scrollTo('contacts')}
-            className="clip-corner font-display text-sm tracking-widest px-8 py-4 font-400 transition-all hover:scale-105 text-cyan"
-            style={{ border: '1px solid rgba(0,229,255,.35)', background: 'rgba(0,229,255,.05)' }}>
-            СВЯЗАТЬСЯ С НАМИ
-          </button>
         </div>
 
         <div className="clip-corner p-8 max-w-3xl animate-fade-up delay-400" style={{ opacity: 0, animationFillMode: 'forwards', background: 'rgba(0,229,255,.04)', border: '1px solid rgba(0,229,255,.12)' }}>
@@ -369,12 +335,7 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-fade-up delay-600" style={{ opacity: 0, animationFillMode: 'forwards' }}>
-        <span className="font-mono text-[8px] text-white/25 tracking-widest">SCROLL</span>
-        <div className="w-px h-12 overflow-hidden" style={{ background: 'rgba(0,229,255,.1)' }}>
-          <div className="w-px h-6 bg-cyan" style={{ animation: 'scan-line 2s ease-in-out infinite' }} />
-        </div>
-      </div>
+
     </section>
   );
 }
@@ -546,69 +507,31 @@ function ContactsSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <div className="font-mono text-[9px] text-cyan/40 tracking-widest mb-6">ИНЖИНИРИНГОВЫЙ ЦЕНТР ТОИ ДВО РАН</div>
-            <div className="space-y-5 mb-10">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
-                  <Icon name="Building2" size={16} className="text-cyan" fallback="Info" />
-                </div>
-                <div>
-                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">ОРГАНИЗАЦИЯ</div>
-                  <div className="font-body text-white/70 text-sm leading-relaxed">
-                    Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана (Инжиниринговый центр ТОИ ДВО РАН)
-                  </div>
+            <div className="space-y-5">
+              <div>
+                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">ОРГАНИЗАЦИЯ</div>
+                <div className="font-body text-white/70 text-sm leading-relaxed">
+                  Инжиниринговый центр развития технологий исследования и освоения ресурсов Мирового океана (Инжиниринговый центр ТОИ ДВО РАН)
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
-                  <Icon name="MapPin" size={16} className="text-cyan" fallback="Info" />
-                </div>
-                <div>
-                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">АДРЕС</div>
-                  <div className="font-body text-white/70 text-sm leading-relaxed">
-                    Россия, Приморский Край<br />
-                    690041, г. Владивосток, ул. Балтийская, 43, ТОИ ДВО РАН
-                  </div>
+              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+              <div>
+                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">АДРЕС</div>
+                <div className="font-body text-white/70 text-sm leading-relaxed">
+                  Россия, Приморский Край<br />
+                  690041, г. Владивосток, ул. Балтийская, 43, ТОИ ДВО РАН
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
-                  <Icon name="UserCheck" size={16} className="text-cyan" fallback="Info" />
-                </div>
-                <div>
-                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">НАУЧНЫЙ РУКОВОДИТЕЛЬ</div>
-                  <div className="font-body text-white/70 text-sm">Лобанов Вячеслав Борисович, к.г.н.</div>
-                  <a href="mailto:lobanov@poi.dvo.ru" className="font-mono text-xs text-cyan/60 hover:text-cyan transition-colors">lobanov@poi.dvo.ru</a>
-                </div>
+              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+              <div>
+                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">НАУЧНЫЙ РУКОВОДИТЕЛЬ</div>
+                <div className="font-body text-white/70 text-sm">Лобанов Вячеслав Борисович, к.г.н.</div>
+                <a href="mailto:lobanov@poi.dvo.ru" className="font-body text-sm text-cyan/60 hover:text-cyan transition-colors">lobanov@poi.dvo.ru</a>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 clip-corner-sm flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(0,229,255,.07)', border: '1px solid rgba(0,229,255,.18)' }}>
-                  <Icon name="User" size={16} className="text-cyan" fallback="Info" />
-                </div>
-                <div>
-                  <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-0.5">НАЧАЛЬНИК ЦЕНТРА</div>
-                  <div className="font-body text-white/70 text-sm">Середа Амртатжути Владимировна</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="clip-corner p-6" style={{ background: 'rgba(0,229,255,.03)', border: '1px solid rgba(0,229,255,.1)' }}>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                <span className="font-mono text-[8px] text-white/15 ml-2 tracking-widest">SYSTEM_STATUS.SH</span>
-              </div>
-              <div className="font-mono text-xs space-y-1.5">
-                <div><span className="text-cyan/30">$</span> <span className="text-white/50">status --all</span></div>
-                <div className="text-green-400/60">✓ Research center: ACTIVE</div>
-                <div className="text-green-400/60">✓ Engineering lab: ONLINE</div>
-                <div className="text-green-400/60">✓ Expeditions: PLANNED</div>
-                <div className="text-cyan/30">$ <span className="animate-blink">_</span></div>
+              <div className="w-full h-px" style={{ background: 'rgba(0,229,255,.08)' }} />
+              <div>
+                <div className="font-mono text-[9px] text-cyan/45 tracking-widest mb-1">НАЧАЛЬНИК ЦЕНТРА</div>
+                <div className="font-body text-white/70 text-sm">Середа Амртатжути Владимировна</div>
               </div>
             </div>
           </div>
@@ -665,10 +588,6 @@ function Footer() {
           {['ГЛАВНАЯ','НАПРАВЛЕНИЯ','УСЛУГИ','КОНТАКТЫ'].map(l => (
             <button key={l} className="font-mono text-[8px] tracking-widest text-white/20 hover:text-cyan/50 transition-colors">{l}</button>
           ))}
-        </div>
-        <div className="font-mono text-[8px] text-white/15 tracking-widest flex items-center gap-2">
-          <span className="text-cyan/25">STATUS:</span> ONLINE
-          <span className="w-1.5 h-1.5 bg-green-400/60 rounded-full inline-block animate-pulse-glow" />
         </div>
       </div>
     </footer>
